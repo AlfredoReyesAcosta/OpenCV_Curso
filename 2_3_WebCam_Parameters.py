@@ -3,7 +3,8 @@ import numpy as np
 
 cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 
-cap.set(cv2.CAP_PROP_BRIGHTNESS, 50)
+#cap.set(cv2.CAP_PROP_BRIGHTNESS, 10)
+cap.set(cv2.CAP_PROP_BRIGHTNESS, 120)
 print(cap.get(cv2.CAP_PROP_BRIGHTNESS))
 
 

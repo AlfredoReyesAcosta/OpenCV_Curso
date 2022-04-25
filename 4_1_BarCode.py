@@ -43,7 +43,7 @@ def display(im, decodedObjects):
 # -------------------- Main ---------------------
 
 # Read image
-im = cv2.imread('zbar-test.jpg')
+im = cv2.imread('QRCode.png')
 
 decodedObjects = decode(im)
 display(im, decodedObjects)

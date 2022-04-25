@@ -5,7 +5,7 @@ Face detection using haar feature-based cascade classifiers
 # Import required packages:
 import cv2
 import numpy as np
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 
 
 
@@ -42,6 +42,6 @@ img_faces_haar_alt2 = show_detection(img.copy(), faces_haar_alt2)
 
 
 # Plot the images:
-cv2.imshow('Face',img_faces_haar_alt2)
+cv2.imshow('Face',img_faces_alt2)
 cv2.waitKey(0)  # Waits for a key
 cv2.destroyAllWindows()

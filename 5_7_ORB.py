@@ -7,6 +7,7 @@ img = cv2.imread('Sistemas.jpg')
 # Change it to grey
 gray=cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
+
 orb = cv2.ORB_create(nfeatures=2000)
 kp, des = orb.detectAndCompute(gray, None)
 

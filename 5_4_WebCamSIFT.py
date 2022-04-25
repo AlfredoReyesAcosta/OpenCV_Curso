@@ -10,9 +10,10 @@ while(True):
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     sift = cv2.xfeatures2d.SIFT_create()
-    #kp = sift.detect(gray,None)
-    kp, des = sift.detectAndCompute(gray,None)
-    frame=cv2.drawKeypoints(gray,kp,frame)
+    kp, des = sift.detectAndCompute(gray, None)
+
+    frame = cv2.drawKeypoints(frame, kp, None, color=(0, 0, 255), flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
+
 
     # Display the resulting frame
     cv2.imshow('SIFT',frame)

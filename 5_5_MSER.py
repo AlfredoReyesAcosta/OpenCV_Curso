@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 # loads the image in color
-img = cv2.imread('Sistemas.jpg',0)
+img = cv2.imread('Sistemas.jpg')
 
 
 mser = cv2.MSER_create()

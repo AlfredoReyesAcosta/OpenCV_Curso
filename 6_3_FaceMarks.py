@@ -5,7 +5,7 @@ Detecting facial landmarks
 # Import required packages:
 import cv2
 import numpy as np
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 import dlib
 
 # Define what landmarks you want:
@@ -127,7 +127,7 @@ while True:
     # For each detected face, find the landmark.
     for (i, rect) in enumerate(rects):
         # Draw a box around the face:
-        cv2.rectangle(frame, (rect.left(), rect.top()), (rect.right(), rect.bottom()), (0, 255, 0), 1)
+        #cv2.rectangle(frame, (rect.left(), rect.top()), (rect.right(), rect.bottom()), (0, 255, 0), 1)
 
         # Get the shape using the predictor:
         shape = predictor(gray, rect)
@@ -142,7 +142,7 @@ while True:
         #draw_shape_lines_range(shape, frame, JAWLINE_POINTS)
 
         # Draw all points and their position:
-        #draw_shape_points_pos(shape, frame)
+        draw_shape_points_pos(shape, frame)
         
         # Draw all shape points:
         #draw_shape_points(shape, frame)

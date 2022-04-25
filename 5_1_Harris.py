@@ -4,9 +4,6 @@ import cv2
 # loads the image in color
 img = cv2.imread('chessboard.png')
 
-# Show image
-#cv2.imshow('image1', img)
-
 # Change it to grey
 gray=cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 

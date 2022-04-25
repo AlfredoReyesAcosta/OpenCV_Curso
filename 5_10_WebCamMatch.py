@@ -4,10 +4,13 @@ import cv2
 cap = cv2.VideoCapture(0)
 
 # loads the image in grey
-img1 = cv2.imread('Billete20.jpg', 0)
+img1 = cv2.imread('200.jpg', 0)
 
-orb = cv2.ORB_create(nfeatures=1000)
-kp1, des1 = orb.detectAndCompute(img1, None)
+#orb = cv2.ORB_create(nfeatures=500)
+#kp1, des1 = orb.detectAndCompute(img1, None)
+
+sift = cv2.xfeatures2d.SIFT_create()
+kp1, des1 = sift.detectAndCompute(img1, None)
 
 while(True):
     # Capture frame-by-frame
@@ -15,11 +18,12 @@ while(True):
 
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     
-    kp2, des2 = orb.detectAndCompute(frame, None)
+    #kp2, des2 = orb.detectAndCompute(frame, None)
+    kp2, des2 = sift.detectAndCompute(frame, None)
 
 
     # matcher takes normType, which is set to cv2.NORM_L2 for SIFT and SURF, cv2.NORM_HAMMING for ORB, FAST and BRIEF
-    bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+    bf = cv2.BFMatcher(cv2.NORM_L2, crossCheck=True)
     matches = bf.match(des1, des2)
     matches = sorted(matches, key=lambda x: x.distance)
 
